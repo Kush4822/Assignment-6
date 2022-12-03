@@ -1,0 +1,45 @@
+<div class="row">
+        <section class="main col-md-9">
+            {{#if this.data.post}}
+            <article>
+                <h2>{{this.data.post.title}}</h2>
+                {{#if this.data.post.featureImage}}
+                    <img src="{{this.data.post.featureImage}}" alt="feature Image" style="width:100%" />
+                {{else}}
+                    <img src="https://dummyimage.com/847x320/d9d9d9/545454.jpg" alt="feature Image" style="width:100%" />
+                {{/if}}
+                <br /><br />
+                {{this.data.post.body}}
+                <br /><br />
+                <strong>Category:</strong> {{this.data.post.category}}<br />
+                <strong>Last Updated:</strong> {{this.data.post.postDate}}
+            {{else}}
+                <div class="col-md-12 text-center">
+                    <h2>{{this.data.message}}</h2>
+                    <h1 class="h1 text-center">Post / Category not available!!!</h1>
+                </div>
+            {{/if}}
+            </article>
+        </section>
+        <aside class="col-md-3">
+            <br /><br />
+            {{#if this.data.posts}}
+                <h4>Posts</h4>
+
+                <ul class="list-group">
+                    {{#each data.posts}}
+                        <a href="/blog/{{this.id}}?category={{this.category}}" class="list-group-item">{{this.title}}</a>
+                    {{/each}}
+                </ul>
+            {{/if}}
+            {{#if this.data.categories}}
+                <h4>Categories</h4>
+                
+                <ul class="list-group">
+                    {{#each data.categories}}
+                        <a href="/blog?category={{this.id}}" class="list-group-item">{{this.category}}</a>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </aside>
+</div>

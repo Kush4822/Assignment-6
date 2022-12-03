@@ -1,0 +1,57 @@
+<body>
+
+    <div class="container" style="padding-top:10px">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h2>Register</h2>
+
+                <br />
+
+                <form method="post" action="/register">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="User Name" name="userName"
+                                        type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Confirm Password" name="password2" type="password" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Email Address" name="email" type="email" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <hr />
+
+                    <input type="submit" class="btn btn-success pull-right" value="Register" /><br /><br /><br />
+
+                </form>
+            </div>
+        </div>
+        {{#if errorMeassage}}
+        <div class="alert alertdanger">
+            <strong>Error:</strong> {{errorMessage}}
+        </div>
+        {{/if}}
+    </div>
+</body>
